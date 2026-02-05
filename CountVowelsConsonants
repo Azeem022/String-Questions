@@ -1,0 +1,23 @@
+import java.util.*;
+public class CountVowelsConsonants  {
+    public static void main(String[] args) {
+        String name = "qwertyuiopasdfghjklzxcvbnm";
+        int vowels = 0;
+        int consonant =0;
+        name = name.toLowerCase();
+        
+        for(int i=0;i<=name.length()-1;i++){
+          char ch = name.charAt(i);
+          if(ch>='a' && ch<='z'){
+            if(ch == 'a' || ch == 'e' || ch =='i' || ch=='o' || ch=='u'){
+              vowels++;
+            }else{
+              consonant++;
+            }
+          }
+        }
+        System.out.println("vowels is :"+vowels);
+        System.out.println("consonant is :"+consonant);
+        
+    }
+}
