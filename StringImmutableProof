@@ -1,0 +1,13 @@
+public class StringImmutableProof {
+    public static void main(String[] args) {
+
+        String s = "Java";
+        System.out.println(s.hashCode());
+
+        s = s + " World";
+        System.out.println(s.hashCode());
+    }
+}
+
+
+“String is immutable because any modification creates a new object instead of changing the existing one.”
