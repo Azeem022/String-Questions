@@ -8,3 +8,18 @@ public class ReverseString {
         System.out.printf("Answer is :"+reversed);
     }
 }
+
+
+====================================OPTIMIZED APPROACH=========================================
+
+public class Main {
+    public static void main(String[] args) {
+
+        String str = "Java";
+
+        // StringBuilder provides an efficient reverse() method
+        String reverse = new StringBuilder(str).reverse().toString();
+
+        System.out.println(reverse);
+    }
+}
