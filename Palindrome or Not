@@ -1,25 +1,41 @@
-import java.util.*;
-public class Palindrome {
+public class Main {
     public static void main(String[] args) {
-        String name = "madam";
-        int start = 0;
-        int end = name.length()-1;
-        Boolean isPalindrome = true;
-        while(start<end){
-          if(name.charAt(start)!=name.charAt(end)){
-            isPalindrome=false;
-            break;
-          }
-          start++;
-          end--;
-  
+
+        String str = "madam";
+
+        int left = 0;
+        int right = str.length() - 1;
+
+        boolean isPalindrome = true;
+
+        while (left < right) {
+
+            // Compare characters from both ends
+            if (str.charAt(left) != str.charAt(right)) {
+                isPalindrome = false;
+                break;
+            }
+
+            left++;
+            right--;
         }
-        if(isPalindrome){
-            System.out.print("Palindrome");
-          }
-          else{
-            System.out.print("Not Palindrome");
-          }
-        
+
+        System.out.println(isPalindrome);
+    }
+}
+
+
+
+
+=======================================================BRUTEFORCE APPROACH=================================================================
+
+public class Main {
+    public static void main(String[] args) {
+
+        String str = "madam";
+
+        String reverse = new StringBuilder(str).reverse().toString();
+
+        System.out.println(str.equals(reverse));
     }
 }
