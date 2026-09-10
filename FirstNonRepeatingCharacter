@@ -3,11 +3,12 @@ import java.util.*;
 public class FirstNonRepeating {
     public static char firstNonRepeatingChar(String s) {
 
-        Map<Character, Integer> map = new LinkedHashMap<>();
+        
+        Map<Character, Integer> map = new LinkedHashMap<>();  // Em map define kr diya jo abhi empty h
 
         // Step 1: frequency count
-        for (char ch : s.toCharArray()) {
-          if (map.containsKey(ch)) {
+        for (char ch : s.toCharArray()) {    // String s ke har character ko ek-ek karke ch variable mein lao.
+          if (map.containsKey(ch)) {    // agr character pelhe se hi present h map mai to uski frequency increase krdo agr present nhi h to else part chalega  
             map.put(ch, map.get(ch) + 1);
           } else{
               map.put(ch, 1);
@@ -17,7 +18,7 @@ public class FirstNonRepeating {
 
         // Step 2: find first with count = 1
         for (char ch : map.keySet()) {
-          if (map.get(ch) == 1) {
+          if (map.get(ch) == 1) {      //map.get('s') -> result 3 first itration mai or 2nd itration mai 1 fir ch return ho jayega 
             return ch;
             }
         }
