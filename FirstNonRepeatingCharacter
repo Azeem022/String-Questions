@@ -33,3 +33,31 @@ public class FirstNonRepeating {
     }
 }
 
+
+
+==================================================================BruteForce Approach ==============================================================
+
+public static char firstNonRepeatingChar(String s) {
+
+    // Check every character one by one
+    for (int i = 0; i < s.length(); i++) {
+
+        int count = 0;
+
+        // Compare current character with every character
+        for (int j = 0; j < s.length(); j++) {
+
+            if (s.charAt(i) == s.charAt(j)) {
+                count++;
+            }
+        }
+
+        // If character appears only once
+        if (count == 1) {
+            return s.charAt(i);
+        }
+    }
+
+    // No non-repeating character found
+    return '\0';
+}
