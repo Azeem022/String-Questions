@@ -37,27 +37,43 @@ public class FirstNonRepeating {
 
 ==================================================================BruteForce Approach ==============================================================
 
-public static char firstNonRepeatingChar(String s) {
+public class Main {
 
-    // Check every character one by one
-    for (int i = 0; i < s.length(); i++) {
+    public static char firstNonRepeatingChar(String s) {
 
-        int count = 0;
+        // Check every character one by one
+        for (int i = 0; i < s.length(); i++) {
 
-        // Compare current character with every character
-        for (int j = 0; j < s.length(); j++) {
+            int count = 0;
 
-            if (s.charAt(i) == s.charAt(j)) {
-                count++;
+            // Compare current character with every character
+            for (int j = 0; j < s.length(); j++) {
+
+                if (s.charAt(i) == s.charAt(j)) {
+                    count++;
+                }
+            }
+
+            // If character appears only once
+            if (count == 1) {
+                return s.charAt(i);
             }
         }
 
-        // If character appears only once
-        if (count == 1) {
-            return s.charAt(i);
-        }
+        // No non-repeating character found
+        return '\0';
     }
 
-    // No non-repeating character found
-    return '\0';
+    public static void main(String[] args) {
+
+        String s = "swiss";
+
+        char result = firstNonRepeatingChar(s);
+
+        if (result != '\0') {
+            System.out.println("First non-repeating character: " + result);
+        } else {
+            System.out.println("No non-repeating character found");
+        }
+    }
 }
