@@ -6,6 +6,7 @@ public class AnagramCheck {
         if (s1.length() != s2.length())
             return false;
 
+//  String ko character array (char[]) mein convert karna.
         char[] a = s1.toCharArray();
         char[] b = s2.toCharArray();
 
